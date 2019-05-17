@@ -13,7 +13,7 @@ import javax.validation.constraints.Size;
 
 import org.apache.commons.lang3.Validate;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
-import org.eclipse.persistence.annotations.PrivateOwned;
+// import org.eclipse.persistence.annotations.PrivateOwned; --> Cambio por error de compilación
 
 /**
  * A voyage schedule.
@@ -28,7 +28,7 @@ public class Schedule implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "voyage_id")
     // TODO Index as cm_index
-    @PrivateOwned
+    //@PrivateOwned  --> Cambio por error de compilación
     @NotNull
     @Size(min = 1)
     private List<CarrierMovement> carrierMovements = Collections.emptyList();
